@@ -37,6 +37,7 @@ const dispatchEvent = (event) => {
   futureStates = []; // Clear future states as new action invalidates them
 
   currentState = EventReducer(currentState, event);
+  console.log('Current State after event:', currentState);
 };
 
 // Curried logActions function
@@ -49,6 +50,7 @@ const undoAction = () => {
   if (pastStates.length > 0) {
     futureStates.push(currentState); // Save current state for redo
     currentState = pastStates.pop(); // Restore last state
+    console.log('State after undo:', currentState);
   } else {
     console.log('No actions to undo');
   }
@@ -59,6 +61,7 @@ const redoAction = () => {
   if (futureStates.length > 0) {
     pastStates.push(currentState); // Save current state for undo
     currentState = futureStates.pop(); // Restore next state
+    console.log('State after redo:', currentState);
   } else {
     console.log('No actions to redo');
   }
@@ -67,11 +70,13 @@ const redoAction = () => {
 // Initialize the dataStore
 let currentState = initialState;
 
+console.log('Initial State:', currentState);
+
 // Example events
 const addItemEvent = {
   type: 'ADD_ITEM_TO_CART',
   payload: {
-    item: { id: 1, name: 'papaya', quantity: 3 }
+    item: { id: 1, name: 'Mango', quantity: 22 }
   }
 };
 
