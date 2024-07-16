@@ -1,0 +1,12 @@
+{
+  "name": "functional-programming-task",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node dataStore.js"
+  },
+  "dependencies": {
+    "immer": "^8.0.1"
+  }
+}
