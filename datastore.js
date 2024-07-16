@@ -20,7 +20,6 @@ const EventReducer = (dataStore, event) => {
       case 'USER_LOGIN':
         draft.user = event.payload.user;
         break;
-      // Handle other event types as needed
       default:
         break;
     }
@@ -72,14 +71,14 @@ let currentState = initialState;
 const addItemEvent = {
   type: 'ADD_ITEM_TO_CART',
   payload: {
-    item: { id: 1, name: 'Apple', quantity: 3 }
+    item: { id: 1, name: 'papaya', quantity: 3 }
   }
 };
 
 const userLoginEvent = {
   type: 'USER_LOGIN',
   payload: {
-    user: { id: 1, name: 'John Doe' }
+    user: { id: 1, name: 'Roza Kassa' }
   }
 };
 
