@@ -20,7 +20,6 @@ const EventReducer = (dataStore, event) => {
       case 'USER_LOGIN':
         draft.user = event.payload.user;
         break;
-      // Handle other event types as needed
       default:
         break;
     }
